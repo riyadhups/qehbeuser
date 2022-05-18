@@ -11,6 +11,9 @@ from asyncio import get_event_loop
 from git import Repo
 from bot import Bot as bot
 import tracemalloc
+from json import loads
+from rich.prompt import Prompt
+from . import logo, console, bilgi
 tracemalloc.start()
 
 @bot.on_message(filters.command('start') & filters.private)
@@ -36,6 +39,24 @@ def rm_r(path):
         shutil.rmtree(path)
 
 @Client.on_message(filters.private & ~filters.forwarded & filters.command('fast'))
+def importlang ():
+    console.clear()
+    logo()
+    bilgi("\n\[1] Azərbaycan dilin üçün 1 seçin\n\[2] Türkiyə dili üçün 2 seçin")
+    Dil = Prompt.ask("[bold yellow]Dil seçin[/]", choices=["1", "2"], default="1"
+
+    if Dil == "1":
+        COUNTRY = "Azerbaijan"
+        LANGUAGE = "AZ"
+        TZ = "Asia/Baku"
+    elif Dil == "2":
+        COUNTRY = "Turkey"
+        LANGUAGE = "TR"
+        TZ = "Europe/Istanbul"
+
+    return COUNTRY, LANGUAGE, TZ
+COUNTRY, LANGUAGE, TZ = importlang()
+LANG = loads(open(f"./plugind/language/{LANGUAGE}.fastjson", "r").read())["STRINGS"]
 async def husu(bot, msg):
     loop = get_event_loop()
     user_id = msg.chat.id
