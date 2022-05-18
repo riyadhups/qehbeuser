@@ -1,7 +1,7 @@
 import os, heroku3, random, requests
 from time import time
 from git import Repo
-from plugin import *
+from plugins import *
 from .bstring import main
 from telethon import TelegramClient, functions
 from telethon.sessions import StringSession
