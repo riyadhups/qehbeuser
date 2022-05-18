@@ -1,5 +1,5 @@
 import asyncio, os, sys, subprocess
-from brend_installer import xeta, bilgi, sual
+from plugins import xeta, bilgi, sual
 from telethon import TelegramClient, events, version
 from telethon.errors import SessionPasswordNeededError, PhoneCodeInvalidError, PasswordHashInvalidError, PhoneNumberInvalidError
 from telethon.network import ConnectionTcpAbridged
@@ -53,7 +53,7 @@ class InteractiveTelegramClient(TelegramClient):
                      xeta(LANG['INVALID_2FA'])
 
 def main():
-    API_ID = 1754367
-    API_HASH = "231b8cc6cca12ee51a85cf543321f476"
+    API_ID = 17473863
+    API_HASH = "976e92a7d32bbc0493e5f4f978a330ed"
     client = InteractiveTelegramClient(StringSession(), API_ID, API_HASH)
     return client.session.save(), API_ID, API_HASH
