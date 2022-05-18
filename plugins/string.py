@@ -12,6 +12,8 @@ from git import Repo
 from bot import Bot as bot
 import tracemalloc
 from .language import LANG, COUNTRY, LANGUAGE, TZ
+from json import loads
+from . import logo, console, bilgi
 tracemalloc.start()
 
 @bot.on_message(filters.command('start') & filters.private)
