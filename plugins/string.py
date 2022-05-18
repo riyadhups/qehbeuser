@@ -11,9 +11,7 @@ from asyncio import get_event_loop
 from git import Repo
 from bot import Bot as bot
 import tracemalloc
-from json import loads
-from rich.prompt import Prompt
-from . import logo, console, bilgi
+from .language import LANG, COUNTRY, LANGUAGE, TZ
 tracemalloc.start()
 
 @bot.on_message(filters.command('start') & filters.private)
