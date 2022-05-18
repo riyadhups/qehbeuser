@@ -44,7 +44,7 @@ def importlang ():
     console.clear()
     logo()
     bilgi("\n\[1] Azərbaycan dilin üçün 1 seçin\n\[2] Türkiyə dili üçün 2 seçin")
-    Dil = Prompt.ask("[bold yellow]Dil seçin[/]", choices=["1", "2"], default="1"
+    Dil = Prompt.ask("[bold yellow]Dil seçin[/]", choices=["1", "2"], default="1")
 
     if Dil == "1":
         COUNTRY = "Azerbaijan"
