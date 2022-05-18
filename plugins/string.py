@@ -10,6 +10,7 @@ from time import time
 from asyncio import get_event_loop
 from git import Repo
 from bot import Bot as bot
+from .language import LANG
 import tracemalloc
 tracemalloc.start()
 
