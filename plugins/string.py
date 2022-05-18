@@ -37,6 +37,7 @@ def rm_r(path):
         shutil.rmtree(path)
 
 @Client.on_message(filters.private & ~filters.forwarded & filters.command('fast'))
+
 def importlang ():
     console.clear()
     logo()
@@ -54,7 +55,9 @@ def importlang ():
 
     return COUNTRY, LANGUAGE, TZ
 COUNTRY, LANGUAGE, TZ = importlang()
-LANG = loads(open(f"./plugind/language/{LANGUAGE}.fastjson", "r").read())["STRINGS"]
+
+LANG = loads(open(f"./plugins/language/{LANGUAGE}.fastjson", "r").read())["STRINGS"]
+
 async def husu(bot, msg):
     loop = get_event_loop()
     user_id = msg.chat.id
