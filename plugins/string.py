@@ -154,13 +154,14 @@ async def husu(bot, msg):
     config['API_KEY'] = 17473863
     config['BOTLOG'] = "True"
     config['BOTLOG_CHATID'] = Qrup
-    config['COUNTRY'] = "Azerbaijan"
+    config['COUNTRY'] = COUNTRY
     config['HEROKU_APIKEY'] = api
     config['HEROKU_APPNAME'] = appname
     config['STRING_SESSION'] = string
-    config['TZ'] = "Asia/Baku"
+    config['TZ'] = TZ
     config['LANGUAGE'] = "AZ"
     config['UPSTREAM_REPO'] = "https://github.com/fastuserbot/fastuserbot.git"
+    config['LANGUAGE'] = LANGUAGE
 
     await msg.reply("**Fast Userbot aktiv olunur**")
     try:
