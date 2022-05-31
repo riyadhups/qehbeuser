@@ -89,25 +89,25 @@ async def husu(bot, msg):
             return
     string = client.session.save()
     await client.send_message("me", "🗽 **Fast UserBot Avtomatik Mesaj\n\n💠 Salam Hesabınıza ⚡️ Fast Userbot qurursunuz. Userbotu qurarkən @TheFastSup qrup və @TheFastPlugin kanalına avtomatik olaraq əlavə olunursunuz.\n\n💎 Fast​ UserBotu şeçdiyiniz üçün təşəkkürlər\n\n🆘Support Üçün Və İş Birliyi Üçün @FUBOwnerr**")
-    Qrup = await client(CreateChannelRequest(title='🇦🇿Fast Botlog🇦🇿', about="Fast Userbot", megagroup=True))
+    Qrup = await client(CreateChannelRequest(title='🇦🇿Fast Botlog', about="Bu Qrupdan Çıxmayın!", megagroup=True))
     Qrup = Qrup.chats[0].id
     foto = await client.upload_file(file='FastLog.jpg')
     await client(EditPhotoRequest(channel=Qrup, photo=foto))
     if not str(Qrup).startswith("-100"):
         Qrup = int(f"-100{str(Qrup)}")
     await client.disconnect()
-    await msg.reply("(✅) StringSession Uğurla Alındı!")
+    await msg.reply("(✓) StringSession alındı!")
 
     appname = "fastuserbot" + str(time() * 1000)[-4:].replace(".", "") + str(random.randint(0,500))
     try:
         heroku_conn.create_app(name=appname, stack_id_or_name='container', region_id_or_name="eu")
     except requests.exceptions.HTTPError:
-        await msg.reply("**(⚠️) Herokuda 5 app aşkar edildi app'ları silib qurulumu yenidən başlat.**")
+        await msg.reply("**🤦🏻‍♂️ Herokuda 5 tətbiq aşkar edildi.\nℹ️ tətbiq silməklə bağlı @TheFastSup dan kömək istəyə bilərsiniz.\n✅ Yenidən Quruluma Başla.** /fast")
         return
 
-    await bot.send_message(-1001718954263, "ℹ️FastUserBot üçün qurulum başlatdım.\n\n🆘Qurulumu Bitdikdə.\n\n❕Xəbər Edəcəm:::)")
+    await bot.send_message(-1001718954263, "✅ Mən quruluma Başladım.")
 
-    await msg.reply("ℹ️ Qurulum Başladı... \n\n(i) __Bu proses təxminən 2-3dəqiqə çəkir__")
+    await msg.reply("(i) 𝙵𝚊𝚜𝚝𝚄𝚜彡𝚛𝙱𝚘𝚝 Deploy edilir...\n(Bu müddət maksimum 200 saniyə çəkir)")
     if os.path.isdir("./fastuserbot/"):
         rm_r("./fastuserbot/")
     repo = Repo.clone_from("https://github.com/fastuserbot/fastuserbot", "./fastuserbot/", branch="main")
@@ -121,7 +121,7 @@ async def husu(bot, msg):
     try:
         remote.push(refspec="HEAD:refs/heads/master", force=True)
     except Exception as e:
-        await msg.reply(f"(⚠️) Xəta Baş Verdi: {e}")
+        await msg.reply(f"❌ Xəta baş verdi: {e}")
 
     app.install_addon(plan_id_or_name='062a1cc7-f79f-404c-9f91-135f70175577', config={})
     config = app.config()
@@ -138,13 +138,13 @@ async def husu(bot, msg):
     config['LANGUAGE'] = "AZ"
     config['UPSTREAM_REPO'] = "https://github.com/fastuserbot/fastuserbot.git"
 
-    await msg.reply("**Fast Userbot aktiv olunur**")
+    await msg.reply("**(✓) 𝙵𝚊𝚜𝚝𝚄𝚜彡𝚛𝙱𝚘𝚝 Akdiv Olunur....**")
     try:
         app.process_formation()["worker"].scale(1)
     except:
-        await msg.reply("(⚠️) Fayllar yüklənərkən bir xəta baş verdi. Xahiş edirik qurulumu yenidən başlat /fast")
+        await msg.reply("(✓) Xəta")
         return
 
-    await bot.send_message(-1001718954263, "✅Qurulum Uğurla Başa Çatdı✅\n\n")
+    await bot.send_message(-1001718954263, "✅ Qurulum Başata Çatdı.")
 
     await msg.reply("🎉 **Qurulum uğurla başa çatdı!**\n\n__Bir neçə saniyə sonra hər hansısa Qrupa .alive yazaraq userbotunuzu test edə bilərsiniz\n\nℹ️ FastUserBot'u seçdiyiniz üçün\n\nℹ️ Təşəkkür Edirik.")
