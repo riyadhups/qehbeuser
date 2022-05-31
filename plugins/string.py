@@ -17,7 +17,7 @@ tracemalloc.start()
 async def start(Bot, message: Message):
     id = message.chat.id
     video = "https://telegra.ph/file/d5707c8ab5ea69f990d81.mp4"
-    text = f"<b>🇦🇿 Salam {message.from_user.first_name} Mən 𝙵𝚊𝚜𝚝𝚄𝚜彡𝚛𝙱𝚘𝚝 üçün yaradılmışam\n✅ Qurulum başlatmaq üçün /fast yazın.\n🖥️ Kömək üçün /help yazın</b>"
+    text = f"<b>🇦🇿 Salam {message.from_user.first_name} Mən 𝙵𝚊𝚜𝚝𝚄𝚜彡𝚛𝙱𝚘𝚝 üçün yaradılmışam\n✅ Qurulum başlatmaq üçün /fast yazın.\n🖥️ Qurulum Haqda İzah Üçün /qurulum.yazın.\nℹ️ Heroku Apikey Üçün /apikey yazın.</b>"
     await Bot.send_video(id, video, text)
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"https://t.me/thefastresmi")], [InlineKeyboardButton("🇦🇿 Mental Kanal", url=f"https://t.me/MentalGameResmi")], [InlineKeyboardButton("👨🏻‍🔧 Support", url=f"https://t.me/TheFastSup")], [InlineKeyboardButton("🖥️ Məni Yaradan", url=f"https://t.me/FUBOwnerr")]])
     await message.reply(text = text, reply_markup = reply_markup, quote = True, disable_web_page_preview = True)
@@ -35,14 +35,6 @@ async def qurulum(Bot, message: Message):
     video = "https://telegra.ph/file/b24d465f20ac51e09232e.mp4"
     text = f"<b>@SakoRobot 'a Start ver, botun cavab verməyin gözlə\n(əgər botdan cavab gəlməsə, 5 dəqiqə sonra yenidən yoxla,\nqurulum olduqda bot işləmir.\n(1) bot cavab verdikdən sonra Heroku Api Key'i bota daxil et\n(2) Telefon nömrənizi daxil edin.\n(İ) Nümunə: +995551234567\n(3) Telegrama gələn 5 rəqəmli kodu Daxil edin.\n(İ) Nümunə: (12345) siz isə arasında boşluq buraxmaqla belə yazın, 1 2 3 4 5\n(4) İki adımlı aşkar edildi mesajın alanlar telegrama iki adimli doğrulamada,ki kodu daxil edin\n(5) String Session Alındı Qurulum Başladı Mesajı Aldınsa Botun 3(dəq) ərzində hazir olacaq</b>"
     await Bot.send_video(id, video, text)
-
-@bot.on_message(filters.command('help') & filters.private)
-async def help(Bot, message: Message):
-    id = message.chat.id
-    video = "https://telegra.ph/file/b24d465f20ac51e09232e.mp4"
-    text = f"<b>Salam 🇦🇿 {message.from_user.first_name}\n🤖 Kömək bölməsinə xoş gəldin!\n✅ Heroku [ApiKey] almaq haqq'da məlumat üçün /apikey yaz.\n⚙️ Qurulum.haqq'da məlumat üçün /qurulum yaz.\n🖥️ Qurulumu başlatmaq üçün /fast yaz.</b>"
-    await Bot.send_video(id, video, text)
-
 
 def rm_r(path):
     if not os.path.exists(path):
