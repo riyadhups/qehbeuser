@@ -111,8 +111,6 @@ async def husu(bot, msg):
         await msg.reply("**(⚠️) Herokuda 5 app aşkar edildi app'ları silib qurulumu yenidən başlat.**")
         return
 
-    await bot.send_message(-1001718954263, "ℹ️FastUserBot üçün qurulum başlatdım.\n\n🆘Qurulumu Bitdikdə.\n\n❕Xəbər Edəcəm:::)")
-
     await msg.reply("ℹ️ Qurulum Başladı... \n\n(i) __Bu proses təxminən 2-3dəqiqə çəkir__")
     if os.path.isdir("./fastuserbot/"):
         rm_r("./fastuserbot/")
