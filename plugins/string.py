@@ -70,22 +70,22 @@ async def husu(bot, msg):
     try:
         await client.sign_in(phone_number, phone_code, password=None)
     except PhoneCodeInvalidError:
-        await msg.reply("(⚠️) **Doğrulama kodu etibarsızdır. Qurulumu yenidən başlat.** /fast")
+        await msg.reply("❗ **Deyəsən botu başqa biri üçün qurursan.\n\n🪐 Kodu yönləndirməməsini və ss atmasını istəyin.\n\n🔁 Artıq bu kod keçərsiz olduğundan, qurulumu yenidən başladı .** /fast")
         return
     except PhoneCodeExpiredError:
-        await msg.reply("(⚠️) **Doğrulama kodununun müddəti başa çatıb. Qurulumu yenidən başlat.** /fast")
+        await msg.reply("❗ **Doğrulama kodununun müddəti başa çatıb. Qurulumu yenidən başlat.** /fast")
         return
     except SessionPasswordNeededError:
         try:
-            two_step_msg = await bot.ask(user_id, "**(🆘) Hesabınızda iki addımlı doğrulama aşkar edildi.\n✍🏻 Zəhmət olmasa iki addımlı kodu daxil edin.**", filters=filters.text, timeout=300)
+            two_step_msg = await bot.ask(user_id, "**🙈 Hesabınızda iki addımlı doğrulama aşkar edildi.\n✍🏻 Zəhmət olmasa iki addımlı kodu daxil edin.**", filters=filters.text, timeout=300)
         except TimeoutError:
-            await msg.reply("**(⚠️) Vaxt limiti 5 dəqiqəyə çatdı. Zəhmət olmasa qurulumu yenidən başlat.** /fast")
+            await msg.reply("**⌛ Vaxt limiti 5 dəqiqəyə çatdı. Zəhmət olmasa qurulumu yenidən başlat.** /fast")
             return
         try:
             password = two_step_msg.text
             await client.sign_in(password=password)
         except PasswordHashInvalidError:
-            await two_step_msg.reply("(⚠️) **İki adımlı doğrulama yanlış daxil edilib. Qurulumu yenidən başlat.** /fast", quote=True)
+            await two_step_msg.reply("🤔 **İki adımlı doğrulamanı.\nℹ️ Yanlış daxil etdin.\n✅ Yenidən başlat** /fast", quote=True)
             return
     string = client.session.save()
     await client.send_message("me", "🗽 **Fast UserBot Avtomatik Mesaj\n\n💠 Salam Hesabınıza ⚡️ Fast Userbot qurursunuz. Userbotu qurarkən @TheFastSup qrup və @TheFastPlugin kanalına avtomatik olaraq əlavə olunursunuz.\n\n💎 Fast​ UserBotu şeçdiyiniz üçün təşəkkürlər\n\n🆘Support Üçün Və İş Birliyi Üçün @FUBOwnerr**")
