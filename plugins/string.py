@@ -15,7 +15,7 @@ tracemalloc.start()
 
 @bot.on_message(filters.command('start') & filters.private)
 async def start(client: Client, message: Message):
-    text = f"<b>🇦🇿 Salam {message.from_user.first_name} Mən FastUserBot üçün yaradılmış qurulum botuyam\n\nℹ️Qurulum üçün sizə Heroku ApiKey Lazımdır.\n\n🆘Heroku ApiKey almaq üçün heroku.com 'a daxil olaraq ala bilərsiniz\n\n❕Qurulumu başlatmaq üçün /fast yazın.</b>"
+    text = f"<b>🇦🇿 Salam {message.from_user.first_name} Mən FastUserBot üçün yaradılmış qurulum botuyam\n\nℹ️Qurulum üçün sizə .\n\n🆘Heroku ApiKey almaq üçün heroku.com 'a daxil olaraq ala bilərsiniz\n\n❕Qurulumu başlatmaq üçün /fast yazın.</b>"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"https://t.me/thefastresmi")], [InlineKeyboardButton("👨🏻‍🔧 Support", url=f"https://t.me/TheFastSup")], [InlineKeyboardButton("👑 Məni Yaradan", url=f"https://t.me/FUBOwner")]])
     await message.reply(text = text, reply_markup = reply_markup, quote = True, disable_web_page_preview = True)
 
