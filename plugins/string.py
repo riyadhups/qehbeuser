@@ -52,12 +52,7 @@ async def husu(bot, msg):
     await msg.reply("✅ **Herokuya Giriş Uğurlu!**")
 
     # Telegram Prosesləri #
-    phone_number_msg = await bot.ask(user_id, "📞 **İndi isə' telefon nömrənizi daxil edin.\n(i) Nümunə:** `+994551234567`", filters=filters.text)
-    except FloodWaitError as e:
-        hata(
-            f"💤 [dndndn].format(e.seconds)}.\n\n\n\n🔁 [znznsn].format(e.seconds)}!"
-        )
-       sys.exit(1) 
+    phone_number_msg = await bot.ask(user_id, "📞 **İndi isə' telefon nömrənizi daxil edin.\n(i) Nümunə:** `+994551234567`", filters=filters.text) 
     phone_number = phone_number_msg.text
     client = TelegramClient(StringSession(), 17202681, "ef4d6e4de6f924085a01988b1bc751f0")
     await client.connect()
@@ -67,6 +62,12 @@ async def husu(bot, msg):
         await msg.reply("❗ **Telefon nömrəsi yanlış!**.\n\n✨ Yenidən başlat /fast")
         return
     try:
+
+    except FloodWaitError as e:
+        hata(
+            f"💤 [dndndn].format(e.seconds)}.\n\n\n\n🔁 [znznsn].format(e.seconds)}!"
+        )
+       sys.exit(1)
         phone_code_msg = await bot.ask(user_id, "**📲 Hesaba Kod Göndərildi.\nℹ️ Rəqəmlərin arasına boşluq buraxmaqla yaz.\n📟 Kod belə olur👉** '12345' **siz isə belə göndərin:** `1 2 3 4 5`\n\n✅ [Koda Baxmaq Üçün Daxil Ol](https://t.me/+42777)", filters=filters.text, timeout=600)
     except TimeoutError:
         await msg.reply("⌛ **Verilən vaxt limi sona çatdı**\n\n❗ Yenidən başlat /fast")
