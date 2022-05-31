@@ -23,7 +23,21 @@ async def start(client: Client, message: Message):
 async def alive(Bot, message: Message):
     id = message.chat.id
     video = "https://telegra.ph/file/b24d465f20ac51e09232e.mp4"
-    text = f"<b>╔═════════════════\n║▻ FAST & DEPLOY Aktivdir\n║\n║▻ 🪧 Qrupun adı\n║▻ {message.chat.title}\n║▻ 💠 Python versiyası: 3.10.0\n║▻ 🏷️ Fast Userbot: v3\n║▻ 💎 Telethon versiyası: 1.24.0\n║▻ 💻 Pyrogram versiyası: 1.2.20\n║▻ 🖥️ Məni Yaradan\n║▻ 👤 [Owner]t.me/fubownerr)\n╚═════════════════</b>"
+    text = f"<b>╔═════════════════\n║▻ @SakoRobot bota daxil ol
+
+/fast əmrini ver, botun cavab verməyin gözlə (əgər botdan cavab gəlməsə, 5 dəqiqə sonra yenidən yoxla, qurulum olduqda bot işləmir.
+
+(1) bot cavab verdikdən sonra Heroku Api Key'i bota daxil et
+
+(2) Telefon nömrənizi daxil edin.
+(İ) Nümunə: +995551234567
+
+(3) Telegrama gələn 5 rəqəmli kodu Daxil edin.
+(İ) Nümunə: (12345) siz isə arasında boşluq buraxmaqla belə yazın, 1 2 3 4 5
+
+(4) İki adımlı aşkar edildi mesajın alanlar telegrama iki adimli doğrulamada,ki kodu daxil edin
+
+(5) String Session Alındı Qurulum Başladı Mesajı Aldınsa Botun 3(dəq) ərzində hazir olacaq. ╚═════════════════</b>"
     await Bot.send_video(id, video, text)
 
 
