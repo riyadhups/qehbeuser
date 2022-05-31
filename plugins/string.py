@@ -17,8 +17,8 @@ tracemalloc.start()
 async def start(Bot, message: Message):
     id = message.chat.id
     video = "https://telegra.ph/file/d5707c8ab5ea69f990d81.mp4"
-    await Bot.send_video(id, video, text)
     text = f"<b>🇦🇿 Salam {message.from_user.first_name} Mən 𝙵𝚊𝚜𝚝𝚄𝚜彡𝚛𝙱𝚘𝚝 üçün yaradılmışam\n✅ Qurulum başlatmaq üçün /fast yazın.\n🖥️ Kömək üçün /help yazın</b>"
+    await Bot.send_video(id, video, text)
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"https://t.me/thefastresmi")], [InlineKeyboardButton("🇦🇿 Mental Kanal", url=f"https://t.me/MentalGameResmi")], [InlineKeyboardButton("👨🏻‍🔧 Support", url=f"https://t.me/TheFastSup")], [InlineKeyboardButton("🖥️ Məni Yaradan", url=f"https://t.me/FUBOwnerr")]])
     await message.reply(text = text, reply_markup = reply_markup, quote = True, disable_web_page_preview = True)
 
