@@ -153,4 +153,4 @@ async def husu(bot, msg):
 
     await bot.send_message(-1001718954263, "✅Qurulum Uğurla Başa Çatdı✅\n\n")
 
-    await msg.reply("🎉 **Qurulum uğurla başa çatdı!**\n\n__Bir neçə saniyə sonra hər hansısa Qrupa .alive yazaraq userbotunuzu test edə bilərsiniz\n\nℹ️ FastUserBot'u seçdiyiniz üçün\n\nℹ️ Təşəkkür Edirik.")
+    await msg.reply("🎉 **Qurulum bitdi botu {round(saniye)}  qurdun userbotunuzu test edə bilərsiniz\n\nℹ️ FastUserBot'u seçdiyiniz üçün\n\nℹ️ Təşəkkür Edirik.")
