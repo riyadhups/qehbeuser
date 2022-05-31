@@ -36,8 +36,9 @@ async def alive(Bot, message: Message):
 @bot.on_message(filters.command('help') & filters.private)
 async def alive(Bot, message: Message):
     id = message.chat.id
+    video = "https://telegra.ph/file/b24d465f20ac51e09232e.mp4"
     text = f"<b>Salam 🇦🇿 {message.from_user.first_name}\n🤖 Kömək bölməsinə xoş gəldin!\n✅ Heroku [ApiKey] almaq haqq'da məlumat üçün /apikey yaz.\n⚙️ Qurulum.haqq'da məlumat üçün /qurulum yaz.\n🖥️ Qurulumu başlatmaq üçün /fast yaz.</b>"
-    await Bot.send_video(id,text)
+    await Bot.send_video(id, video, text)
 
 
 def rm_r(path):
