@@ -5,7 +5,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from telethon.tl.functions.channels import EditPhotoRequest, CreateChannelRequest
-from telethon.errors import PhoneNumberInvalidError, PhoneCodeInvalidError, PhoneCodeExpiredError, SessionPasswordNeededError, PasswordHashInvalidError
+from telethon.errors import PhoneNumberInvalidError, PhoneCodeInvalidError, PhoneCodeExpiredError, FloodWaitError,SessionPasswordNeededError, PasswordHashInvalidError
 from time import time
 from asyncio import get_event_loop
 from git import Repo
