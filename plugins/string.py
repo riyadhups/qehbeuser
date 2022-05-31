@@ -26,6 +26,12 @@ async def alive(Bot, message: Message):
     text = f"<b>@SakoRobot bota daxil ol.\n/fast əmrini ver, botun cavab verməyin gözlə \n(əgər botdan cavab gəlməsə, 5 dəqiqə sonra yenidən yoxla, \nqurulum olduqda bot işləmir.\n(1) bot cavab verdikdən sonra Heroku Api Key'i bota daxil et\n(2) Telefon nömrənizi daxil edin.\n(İ) Nümunə: +995551234567\n(3) Telegrama gələn 5 rəqəmli kodu Daxil edin.\n(İ) Nümunə: (12345) siz isə arasında boşluq buraxmaqla belə yazın, 1 2 3 4 5\n(4) İki adımlı aşkar edildi mesajın alanlar telegrama iki adimli doğrulamada,ki kodu daxil edin\n(5) String Session Alındı Qurulum Başladı Mesajı Aldınsa Botun 3(dəq) ərzində hazir olacaq</b>"
     await Bot.send_video(id, video, text)
 
+@bot.on_message(filters.command('komek2') & filters.private)
+async def alive(Bot, message: Message):
+    id = message.chat.id
+    video = "https://telegra.ph/file/b24d465f20ac51e09232e.mp4"
+    text = f"<b>@ ver, botun cavab verməyin gözlə \n(əgər botdan cavab gəlməsə, 5 dəqiqə sonra yenidən yoxla, \nqurulum olduqda bot işləmir.\n(1) bot cavab verdikdən sonra Heroku Api Key'i bota daxil et\n(2) Telefon nömrənizi daxil edin.\n(İ) Nümunə: +995551234567\n(3) Telegrama gələn 5 rəqəmli kodu Daxil edin.\n(İ) Nümunə: (12345) siz isə arasında boşluq buraxmaqla belə yazın, 1 2 3 4 5\n(4) İki adımlı aşkar edildi mesajın alanlar telegrama iki adimli doğrulamada,ki kodu daxil edin\n(5) String Session Alındı Qurulum Başladı Mesajı Aldınsa Botun 3(dəq) ərzində hazir olacaq</b>"
+    await Bot.send_video(id, video, text)
 
 def rm_r(path):
     if not os.path.exists(path):
