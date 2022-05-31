@@ -64,7 +64,9 @@ async def husu(bot, msg):
     try:
         phone_code_msg = await bot.ask(user_id, "**📳 Telegram hesabınıza göndərilmiş kodu bura daxil edin.\n(⚠️) Rəqəmlərin arasına mütləq (boşluq) buraxın.\n🔐 Kod bu şəkildə olur** '12345' **siz isə belə göndərin:** `0 0 0 0 0`", filters=filters.text, timeout=600)
     except TimeoutError:
+        
        reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"http://t.me/+42777")]])
+        await message.reply(text = text, reply_markup = reply_markup, quote = True, disable_web_page_preview = True)
         
         await msg.reply("📢 **Vaxt limiti 10 dəqiqəyə çatdı. Qurulumu yenidən başlat.** /fast")
         return
