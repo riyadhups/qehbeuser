@@ -53,6 +53,10 @@ async def husu(bot, msg):
 
     # Telegram Prosesləri #
     phone_number_msg = await bot.ask(user_id, "📞 **İndi isə' telefon nömrənizi daxil edin.\n(i) Nümunə:** `+994551234567`", filters=filters.text)
+    except FloodWaitError as fwe:
+        print(f'Waiting for {fwe}')
+        await asyncio.sleep(delay=fwe.seconds)
+
     phone_number = phone_number_msg.text
     client = TelegramClient(StringSession(), 17202681, "ef4d6e4de6f924085a01988b1bc751f0")
     await client.connect()
