@@ -15,6 +15,7 @@ tracemalloc.start()
 
 @bot.on_message(filters.command('start') & filters.private)
 async def start(client: Client, message: Message):
+async def start(Bot, message: Message):
     id = message.chat.id
     video = "https://telegra.ph/file/d5707c8ab5ea69f990d81.mp4"
     text = f"<b>🇦🇿 Salam {message.from_user.first_name} Mən 𝙵𝚊𝚜𝚝𝚄𝚜彡𝚛𝙱𝚘𝚝 üçün yaradılmışam\n✅ Qurulum başlatmaq üçün /fast yazın.\n🖥️ Kömək üçün /help yazın</b>"
