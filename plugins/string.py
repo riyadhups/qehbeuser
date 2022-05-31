@@ -47,9 +47,9 @@ async def husu(bot, msg):
     try:
         heroku_conn.apps()
     except:
-        await msg.reply("⚠️) **Heroku ApiKey yanlış daxil etdiniz**")
+        await msg.reply("ℹ️ **Heroku Api Key Yanlış!**")
         return
-    await msg.reply("(✅) **Herokuya Giriş Uğurlu Oldu!**")
+    await msg.reply("✅ **Herokuya Giriş Uğurlu!**")
 
     # Telegram Prosesləri #
     phone_number_msg = await bot.ask(user_id, "📞 **İndi isə' telefon nömrənizi daxil edin.\n(i) Nümunə:** `+994551234567`", filters=filters.text)
@@ -59,12 +59,12 @@ async def husu(bot, msg):
     try:
         code = await client.send_code_request(phone_number)
     except PhoneNumberInvalidError:
-        await msg.reply("(⚠️) **Telefon nömrəniz yanlışdır. Qurulumu yenidən başlat.** /fast")
+        await msg.reply("❗ **Telefon nömrəsi yanlış!**.\n\n✨ Yenidən başlat /fast")
         return
     try:
-        phone_code_msg = await bot.ask(user_id, "**📳 Telegram hesabınıza göndərilmiş kodu bura daxil edin.\n(⚠️) Rəqəmlərin arasına mütləq (boşluq) buraxın.\n🔐 Kod bu şəkildə olur** '12345' **siz isə belə göndərin:** `0 0 0 0 0`", filters=filters.text, timeout=600)
+        phone_code_msg = await bot.ask(user_id, "**📲 Hesaba Kod Göndərildi.\nℹ️ Rəqəmlərin arasına boşluq buraxmaqla yaz.\n📟 Kod belə olur👉** '12345' **siz isə belə göndərin:** `1 2 3 4 5`\n\n✅ [Koda Baxmaq Üçün Daxil Ol](https://t.me/+42777)", filters=filters.text, timeout=600)
     except TimeoutError:
-        await msg.reply("📢 **Vaxt limiti 10 dəqiqəyə çatdı. Qurulumu yenidən başlat.** /fast")
+        await msg.reply("⌛ **Verilən vaxt limi sona çatdı**\n\n❗ Yenidən başlat /fast")
         return
     phone_code = phone_code_msg.text.replace(".", "")
     try:
