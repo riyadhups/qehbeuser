@@ -60,10 +60,6 @@ async def husu(bot, msg):
         return
     await msg.reply("✅ **Herokuya Giriş Uğurlu!**")
 
-buttons = [
-        [
-            InlineKeyboardButton(text="✔️ Uptime", callback_data="UPT"),
-        ],
     # Telegram Prosesləri #
     phone_number_msg = await bot.ask(user_id, "📞 **İndi isə' telefon nömrənizi daxil edin.\n(i) Nümunə:** `+994551234567`", filters=filters.text) 
     phone_number = phone_number_msg.text
