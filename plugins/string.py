@@ -19,7 +19,7 @@ async def start(client: Client, message: Message):
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"https://t.me/thefastresmi")], [InlineKeyboardButton("🇦🇿 Mental Kanal", url=f"https://t.me/MentalGameResmi")], [InlineKeyboardButton("👨🏻‍🔧 Support", url=f"https://t.me/TheFastSup")], [InlineKeyboardButton("🖥️ Məni Yaradan", url=f"https://t.me/FUBOwnerr")]])
     await message.reply(text = text, reply_markup = reply_markup, quote = True, disable_web_page_preview = True)
 
-@bot.on_message(filters.command('komek') & filters.private,group)
+@bot.on_message(filters.command('komek') & filters.group)
 async def alive(Bot, message: Message):
     id = message.chat.id
     img = ""
