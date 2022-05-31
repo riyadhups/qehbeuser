@@ -14,7 +14,6 @@ import tracemalloc
 tracemalloc.start()
 
 @bot.on_message(filters.command('start') & filters.private)
-async def start(client: Client, message: Message):
 async def start(Bot, message: Message):
     id = message.chat.id
     video = "https://telegra.ph/file/d5707c8ab5ea69f990d81.mp4"
