@@ -60,9 +60,10 @@ async def husu(bot, msg):
         return
     await msg.reply("✅ **Herokuya Giriş Uğurlu!**")
 
-    await msg.reply(InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"https://t.me/thefastresmi")], [InlineKeyboardButton("🇦🇿 Mental Kanal", url=f"https://t.me/MentalGameResmi")], [InlineKeyboardButton("👨🏻‍🔧 Support", url=f"https://t.me/TheFastSup")], [InlineKeyboardButton("🖥️ Məni Yaradan", url=f"https://t.me/FUBOwnerr")]])
-    await message.reply(text = text, reply_markup = reply_markup, quote = True, disable_web_page_preview = True)
-
+buttons = [
+        [
+            InlineKeyboardButton(text="✔️ Uptime", callback_data="UPT"),
+        ],
     # Telegram Prosesləri #
     phone_number_msg = await bot.ask(user_id, "📞 **İndi isə' telefon nömrənizi daxil edin.\n(i) Nümunə:** `+994551234567`", filters=filters.text) 
     phone_number = phone_number_msg.text
