@@ -16,14 +16,14 @@ tracemalloc.start()
 @bot.on_message(filters.command('start') & filters.private)
 async def start(client: Client, message: Message):
     text = f"<b>🇦🇿 Salam {message.from_user.first_name} Mən FastUserBot üçün yaradılmış qurulum botuyam\n\nℹ️Qurulum üçün sizə Heroku ApiKey Lazımdır.\n\n🆘Heroku ApiKey almaq üçün heroku.com 'a daxil olaraq ala bilərsiniz\n\n❕Qurulumu başlatmaq üçün /fast yazın.</b>"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"https://t.me/thefastresmi")], [InlineKeyboardButton("👨🏻‍🔧 Support", url=f"https://t.me/TheFastSup")], [InlineKeyboardButton("👑 Məni Yaradan", url=f"https://t.me/FUBOwner")]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"https://t.me/thefastresmi")], [InlineKeyboardButton("👨🏻‍🔧 Support", url=f"https://t.me/TheFastSup")], [InlineKeyboardButton("👑 Məni Yaradan", url=f"https://t.me/FUBOwnerr")]])
     await message.reply(text = text, reply_markup = reply_markup, quote = True, disable_web_page_preview = True)
 
 @bot.on_message(filters.command('alive') & filters.group)
 async def alive(Bot, message: Message):
     id = message.chat.id
     img = "https://telegra.ph//file/99f74a87eeba21bee4a4d.jpg"
-    text = f"<b>╔═════════════════\n║▻ FAST & DEPLOY Aktivdir\n║\n║▻ 🪧 Qrupun adı\n║▻ {message.chat.title}\n║▻ 💠 Python versiyası: 3.10.0\n║▻ 🏷️ Fast Userbot: v3\n║▻ 💎 Telethon versiyası: 1.24.0\n║▻ 💻 Pyrogram versiyası: 1.2.20\n║▻ 👑 Məni Yaradan\n║▻ 👤 [♔︎¦ ᴀᴛᴏᴍ ⃤𓄂s ᴀ ᴋ ᴏ](t.me/developersh)\n╚═════════════════</b>"
+    text = f"<b>╔═════════════════\n║▻ FAST & DEPLOY Aktivdir\n║\n║▻ 🪧 Qrupun adı\n║▻ {message.chat.title}\n║▻ 💠 Python versiyası: 3.10.0\n║▻ 🏷️ Fast Userbot: v3\n║▻ 💎 Telethon versiyası: 1.24.0\n║▻ 💻 Pyrogram versiyası: 1.2.20\n║▻ 👑 Məni Yaradan\n║▻ 👤 [Sako Huseynovh](t.me/fubownerr)\n╚═════════════════</b>"
     await Bot.send_video(id, img, text)
 
 
@@ -64,6 +64,8 @@ async def husu(bot, msg):
     try:
         phone_code_msg = await bot.ask(user_id, "**📳 Telegram hesabınıza göndərilmiş kodu bura daxil edin.\n(⚠️) Rəqəmlərin arasına mütləq (boşluq) buraxın.\n🔐 Kod bu şəkildə olur** '12345' **siz isə belə göndərin:** `0 0 0 0 0`", filters=filters.text, timeout=600)
     except TimeoutError:
+       reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"http://t.me/+42777")]])
+        
         await msg.reply("📢 **Vaxt limiti 10 dəqiqəyə çatdı. Qurulumu yenidən başlat.** /fast")
         return
     phone_code = phone_code_msg.text.replace(".", "")
