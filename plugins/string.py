@@ -23,12 +23,9 @@ async def start(client: Client, message: Message):
 async def alive(Bot, message: Message):
     id = message.chat.id
     video = "https://telegra.ph/file/b24d465f20ac51e09232e.mp4"
-    text = f"<b>╔═════════════════\n║▻ @SakoRobot bota daxil ol
-
-/fast əmrini ver, botun cavab verməyin gözlə (əgər botdan cavab gəlməsə, 5 dəqiqə sonra yenidən yoxla, qurulum olduqda bot işləmir.
+    text = @SakoRobot bota daxil ol /fast əmrini ver, botun cavab verməyin gözlə (əgər botdan cavab gəlməsə, 5 dəqiqə sonra yenidən yoxla, qurulum olduqda bot işləmir.
 
 (1) bot cavab verdikdən sonra Heroku Api Key'i bota daxil et
-
 (2) Telefon nömrənizi daxil edin.
 (İ) Nümunə: +995551234567
 
