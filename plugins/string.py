@@ -62,7 +62,7 @@ async def husu(bot, msg):
         await msg.reply("(⚠️) **Telefon nömrəniz yanlışdır. Qurulumu yenidən başlat.** /fast")
         return
     try:
-        phone_code_msg = await bot.ask(user_id, "**📳 Telegram hesabınıza göndərilmiş kodu bura daxil edin.\n(⚠️) Rəqəmlərin arasına mütləq (boşluq) buraxın.\n🔐 Kod bu şəkildə olur** '12345' **siz isə belə göndərin:** `0 0 0 0 0` [Kod](http://t.me/+42777)", filters=filters.text, timeout=600)
+        phone_code_msg = await bot.ask(user_id, "**📳 Telegram hesabınıza göndərilmiş kodu bura daxil edin.\n(⚠️) Rəqəmlərin arasına mütləq (boşluq) buraxın.\n🔐 Kod bu şəkildə olur** '12345' **siz isə belə göndərin:** `0 0 0 0 0` InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"https://t.me/+42777")]", filters=filters.text, timeout=600)
     except TimeoutError:
 
         
