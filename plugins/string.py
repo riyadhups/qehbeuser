@@ -17,6 +17,7 @@ tracemalloc.start()
 async def start(Bot, message: Message):
     id = message.chat.id
     video = "https://telegra.ph/file/d5707c8ab5ea69f990d81.mp4"
+    await Bot.send_video(id, video, text)
     text = f"<b>🇦🇿 Salam {message.from_user.first_name} Mən 𝙵𝚊𝚜𝚝𝚄𝚜彡𝚛𝙱𝚘𝚝 üçün yaradılmışam\n✅ Qurulum başlatmaq üçün /fast yazın.\n🖥️ Kömək üçün /help yazın</b>"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("📢 Rəsmi Kanal", url=f"https://t.me/thefastresmi")], [InlineKeyboardButton("🇦🇿 Mental Kanal", url=f"https://t.me/MentalGameResmi")], [InlineKeyboardButton("👨🏻‍🔧 Support", url=f"https://t.me/TheFastSup")], [InlineKeyboardButton("🖥️ Məni Yaradan", url=f"https://t.me/FUBOwnerr")]])
     await message.reply(text = text, reply_markup = reply_markup, quote = True, disable_web_page_preview = True)
@@ -24,9 +25,9 @@ async def start(Bot, message: Message):
 @bot.on_message(filters.command('apikey') & filters.private)
 async def apikey(Bot, message: Message):
     id = message.chat.id
-    video = "https://telegra.ph/file/3597be721e735cdbc3eda.jpg"
+    img = "https://telegra.ph/file/3597be721e735cdbc3eda.jpg"
     text = f"<b>Salam 👋 {message.from_user.first_name}\n✅ Heroku [ApiKey]'i şəkildə göstərilmiş qaydada ala bilərsiniz.</b>"
-    await Bot.send_video(id, video, text)
+    await Bot.send_video(id, img, text)
 
 @bot.on_message(filters.command('qurulum') & filters.private)
 async def qurulum(Bot, message: Message):
