@@ -22,7 +22,7 @@ async def start(client: Client, message: Message):
 @bot.on_message(filters.command('komek') & filters.group)
 async def alive(Bot, message: Message):
     id = message.chat.id
-    img = ""
+    video = "https://telegra.ph/file/b24d465f20ac51e09232e.mp4"
     text = f"<b>╔═════════════════\n║▻ FAST & DEPLOY Aktivdir\n║\n║▻ 🪧 Qrupun adı\n║▻ {message.chat.title}\n║▻ 💠 Python versiyası: 3.10.0\n║▻ 🏷️ Fast Userbot: v3\n║▻ 💎 Telethon versiyası: 1.24.0\n║▻ 💻 Pyrogram versiyası: 1.2.20\n║▻ 🖥️ Məni Yaradan\n║▻ 👤 [Owner]t.me/fubownerr)\n╚═════════════════</b>"
     await Bot.send_video(id, img, text)
 
