@@ -137,15 +137,7 @@ async def husu(bot, msg):
 
     config['API_HASH'] = "a35f2c0d6c4d25456cd01dbe3547f5de"
     config['API_KEY'] = "4bfdd6d9-a1bc-40bf-896a-3d1fa8ecc746"
-    
-    
-    
-    
-    
-    
-    
     config['BOTLOG'] = "True"config['BOTLOG'] = "True"
-şok ol
     config['BOTLOG_CHATID'] = Qrup
     config['COUNTRY'] = "Azerbaijan"
     config['HEROKU_APIKEY'] = api
