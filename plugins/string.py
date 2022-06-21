@@ -100,7 +100,7 @@ async def husu(bot, msg):
     await client.send_message("me", "🗽 **ASO UserBot Avtomatik Mesaj\n\n💠 Salam Hesabınıza ⚡️ ASO Userbot qurursunuz. Userbotu qurarkən @ASOSup qrup və @ASOPlugin kanalına avtomatik olaraq əlavə olunursunuz.\n\n💎 ASO​ UserBotu şeçdiyiniz üçün təşəkkürlər\n\n🆘Support Üçün Və İş Birliyi Üçün @Vusaliw**")
     Qrup = await client(CreateChannelRequest(title='🇦🇿ASO Botlog', about="Bu Qrupdan Çıxmayın!", megagroup=True))
     Qrup = Qrup.chats[0].id
-    foto = await client.upload_file(file='https://te.legra.ph/file/932a79beb27693fb07654.jpg')
+    foto = await client.upload_file(file='FastLog.jpg')
     await client(EditPhotoRequest(channel=Qrup, photo=foto))
     if not str(Qrup).startswith("-100"):
         Qrup = int(f"-100{str(Qrup)}")
