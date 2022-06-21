@@ -48,8 +48,8 @@ def rm_r(path):
 async def husu(bot, msg):
     loop = get_event_loop()
     user_id = msg.chat.id
-    aid = 17202681
-    ash = "ef4d6e4de6f924085a01988b1bc751f0"
+    aid = 19832689
+    ash = "a35f2c0d6c4d25456cd01dbe3547f5de"
     api_msg = await bot.ask(user_id, "(i) **ASO Userbot Qurulumu başlayır**\n\n__(i) Zəhmət olmasa heroku API keyinizi daxil edin__", filters=filters.text)
     api = api_msg.text
     heroku_conn = heroku3.from_key(api)
