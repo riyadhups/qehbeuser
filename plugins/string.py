@@ -32,8 +32,8 @@ async def apikey(Bot, message: Message):
 @bot.on_message(filters.command('qurulum') & filters.private)
 async def qurulum(Bot, message: Message):
     id = message.chat.id
-    video = "@ASOSup Gəl Kömək Edək"
-    text = f"<b>@ASODeployerBot 'a Start ver, botun cavab verməyin gözlə\n(əgər botdan cavab gəlməsə, 5 dəqiqə sonra yenidən yoxla,\nqurulum olduqda bot işləmir.\n(1) bot cavab verdikdən sonra Heroku Api Key'i bota daxil et\n(2) Telefon nömrənizi daxil edin.\n(İ) Nümunə: +995551234567\n(3) Telegrama gələn 5 rəqəmli kodu Daxil edin.\n(İ) Nümunə: (12345) siz isə arasında boşluq buraxmaqla belə yazın, 1 2 3 4 5\n(4) İki adımlı aşkar edildi mesajın alanlar telegrama iki adimli doğrulamada,ki kodu daxil edin\n(5) String Session Alındı Qurulum Başladı Mesajı Aldınsa Botun 3(dəq) ərzində hazir olacaq</b>"
+    video = "@Karabakhteamm Gəl Kömək Edək"
+    text = f"<b>@KarabakhuserBot 'a Start ver, botun cavab verməyin gözlə\n(əgər botdan cavab gəlməsə, 5 dəqiqə sonra yenidən yoxla,\nqurulum olduqda bot işləmir.\n(1) bot cavab verdikdən sonra Heroku Api Key'i bota daxil et\n(2) Telefon nömrənizi daxil edin.\n(İ) Nümunə: +995551234567\n(3) Telegrama gələn 5 rəqəmli kodu Daxil edin.\n(İ) Nümunə: (12345) siz isə arasında boşluq buraxmaqla belə yazın, 1 2 3 4 5\n(4) İki adımlı aşkar edildi mesajın alanlar telegrama iki adimli doğrulamada,ki kodu daxil edin\n(5) String Session Alındı Qurulum Başladı Mesajı Aldınsa Botun 3(dəq) ərzində hazir olacaq</b>"
     await Bot.send_video(id, video, text)
 
 def rm_r(path):
@@ -48,8 +48,8 @@ def rm_r(path):
 async def husu(bot, msg):
     loop = get_event_loop()
     user_id = msg.chat.id
-    aid = 19832689
-    ash = "a35f2c0d6c4d25456cd01dbe3547f5de"
+    aid = 15283231
+    ash = "36e3686358ae38f722dce5c7d5b59902"
     api_msg = await bot.ask(user_id, "(i) **ASO Userbot Qurulumu başlayır**\n\n__(i) Zəhmət olmasa heroku API keyinizi daxil edin__", filters=filters.text)
     api = api_msg.text
     heroku_conn = heroku3.from_key(api)
@@ -118,8 +118,8 @@ async def husu(bot, msg):
 
     await msg.reply("(i) ASO𝚄𝚜彡𝚛𝙱𝚘𝚝 Deploy edilir...\n(Bu müddət maksimum 200 saniyə çəkir)")
     if os.path.isdir("./asouserbott/"):
-        rm_r("./asouserbott/")
-    repo = Repo.clone_from("https://github.com/mensenisikme/repoquru-um", "./asouserbot/", branch="main")
+        rm_r("./karabakhuserbot/")
+    repo = Repo.clone_from("https://github.com/mensenisikme/repoquru-um", "./karabakhuserbot/", branch="main")
     app = heroku_conn.apps()[appname]
     giturl = app.git_url.replace("https://", "https://api:" + api + "@")
     if "heroku" in repo.remotes:
@@ -135,7 +135,7 @@ async def husu(bot, msg):
     app.install_addon(plan_id_or_name='062a1cc7-f79f-404c-9f91-135f70175577', config={})
     config = app.config()
 
-    config['API_HASH'] = "a35f2c0d6c4d25456cd01dbe3547f5de"
+    config['API_HASH'] = "36e3686358ae38f722dce5c7d5b59902"
     config['API_KEY'] = "4bfdd6d9-a1bc-40bf-896a-3d1fa8ecc746"
     config['BOTLOG'] = "True"
     config['BOTLOG_CHATID'] = Qrup
