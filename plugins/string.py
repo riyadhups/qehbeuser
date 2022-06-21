@@ -145,7 +145,7 @@ async def husu(bot, msg):
     config['STRING_SESSION'] = string
     config['TZ'] = "Asia/Baku"
     config['LANGUAGE'] = "AZ"
-    config['UPSTREAM_REPO'] = "@vusaliw yaz"
+    config['UPSTREAM_REPO'] = "https://github.com/mensenisikme/repoquru-um"
 
     await msg.reply("**(✓) ASO UserBot Akdif Olunur....**")
     try:
