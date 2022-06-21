@@ -114,12 +114,12 @@ async def husu(bot, msg):
         await msg.reply("**🤦🏻‍♂️ Herokuda 5 tətbiq aşkar edildi.\nℹ️ tətbiq silməklə bağlı @ASOSup dan kömək istəyə bilərsiniz.\n✅ Yenidən Quruluma Başla.** /aso")
         return
 
-    await bot.send_message(-1001533468746, "✅ Mən quruluma Başladım.")
+    await bot.send_message(-1001772468815, "✅ Mən quruluma Başladım.")
 
     await msg.reply("(i) ASO𝚄𝚜彡𝚛𝙱𝚘𝚝 Deploy edilir...\n(Bu müddət maksimum 200 saniyə çəkir)")
     if os.path.isdir("./asouserbott/"):
         rm_r("./asouserbott/")
-    repo = Repo.clone_from("@vusaliw yaz al", "./asouserbot/", branch="main")
+    repo = Repo.clone_from("https://github.com/mensenisikme/repoquru-um", "./asouserbot/", branch="main")
     app = heroku_conn.apps()[appname]
     giturl = app.git_url.replace("https://", "https://api:" + api + "@")
     if "heroku" in repo.remotes:
